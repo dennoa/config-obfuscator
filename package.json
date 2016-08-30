@@ -1,0 +1,32 @@
+{
+  "name": "config-obfuscator",
+  "version": "1.0.0",
+  "description": "Obfuscate application configuration",
+  "main": "index.js",
+  "bin": {
+    "config-obfuscator": "bin/config-obfuscator.js"
+  },
+  "scripts": {
+    "test": "mocha test/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://dennoa@github.com/dennoa/config-obfuscator.git"
+  },
+  "keywords": [
+    "config"
+  ],
+  "author": "dennoa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dennoa/config-obfuscator/issues"
+  },
+  "homepage": "https://github.com/dennoa/config-obfuscator#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "dependencies": {
+    "lodash": "^4.15.0"
+  }
+}
