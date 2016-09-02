@@ -37,24 +37,24 @@ To merge obfuscated configuration with the rest:
 
 * Add config that is common to all environments:
 
-    config-obfuscator --add some-config.json --cfg ob.cfg --key "my config key"
+        config-obfuscator --add some-config.json --cfg ob.cfg --key "my config key"
 
 * Add config that is specific to the test environment:
 
-    config-obfuscator --add some-config.json --cfg ob.cfg --key "my config key" --env test
+        config-obfuscator --add some-config.json --cfg ob.cfg --key "my config key" --env test
 
 * View the configuration that is common to all environments:
 
-    config-obfuscator --get ob.cfg --key "my config key"
+        config-obfuscator --get ob.cfg --key "my config key"
 
 * View the configuration that is specific to the test environment:
 
-    config-obfuscator --get ob.cfg --key "my config key" --env test
+        config-obfuscator --get ob.cfg --key "my config key" --env test
 
 * Remove a config item (itemName) from all environments:
 
-    config-obfuscator --get ob.cfg --key "my config key" --remove itemName
+        config-obfuscator --get ob.cfg --key "my config key" --remove itemName
 
 * Remove a config item (itemName) from the text environment:
 
-    config-obfuscator --get ob.cfg --key "my config key" --remove itemName --env test
+        config-obfuscator --get ob.cfg --key "my config key" --remove itemName --env test
