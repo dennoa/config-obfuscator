@@ -18,7 +18,7 @@ function exitWithUsageInstructions() {
 }
 
 function exitWithError(err) {
-  console.log(err);
+  console.log(JSON.stringify(err));
   process.exit(1);
 }
 
@@ -43,12 +43,12 @@ function handleAdd() {
   let obFile = cfgFile || (addFile + '.cfg');
   let ob = obfuscator({ filename: obFile, key: obKey });
   console.log('adding json configuration from ' + addFile + ' to ' + obFile + ' with key ' + ob.key + ' for ' + (env || 'any') + ' environment');
-  console.log(ob.add(JSON.parse(json), env));
+  console.log(JSON.stringify(ob.add(JSON.parse(json), env)));
 }
 
 function handleRemove(ob) {
   console.log('removing ' + removeProp + ' from the configuration in ' + getFile + ' with key ' + ob.key + ' for ' + (env || 'any') + ' environment');
-  console.log(ob.remove(removeProp, env));
+  console.log(JSON.stringify(ob.remove(removeProp, env)));
 }
 
 function handleGet() {
@@ -57,7 +57,7 @@ function handleGet() {
     handleRemove(ob);
   } else {
     console.log('showing configuration from ' + getFile + ' with key ' + ob.key + ' for ' + (env || 'any') + ' environment');
-    console.log(ob.get(env));
+    console.log(JSON.stringify(ob.get(env)));
   }
 }
 
