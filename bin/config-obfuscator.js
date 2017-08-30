@@ -31,17 +31,17 @@ if (process.argv.length < 3) {
   exitWithUsageInstructions();
 }
 
-let addFile = getValue('--add');
-let cfgFile = getValue('--cfg');
-let getFile = getValue('--get');
-let obKey = getValue('--key');
-let env = getValue('--env');
-let removeProp = getValue('--remove');
+const addFile = getValue('--add');
+const cfgFile = getValue('--cfg');
+const getFile = getValue('--get');
+const obKey = getValue('--key');
+const env = getValue('--env');
+const removeProp = getValue('--remove');
 
 function handleAdd() {
-  let json = fs.readFileSync(addFile, 'utf8');
-  let obFile = cfgFile || (addFile + '.cfg');
-  let ob = obfuscator({ filename: obFile, key: obKey });
+  const json = fs.readFileSync(addFile, 'utf8');
+  const obFile = cfgFile || (addFile + '.cfg');
+  const ob = obfuscator({ filename: obFile, key: obKey });
   console.log('adding json configuration from ' + addFile + ' to ' + obFile + ' with key ' + ob.key + ' for ' + (env || 'any') + ' environment');
   console.log(JSON.stringify(ob.add(JSON.parse(json), env)));
 }
@@ -52,7 +52,7 @@ function handleRemove(ob) {
 }
 
 function handleGet() {
-  let ob = obfuscator({ filename: getFile, key: obKey });
+  const ob = obfuscator({ filename: getFile, key: obKey });
   if (removeProp) {
     handleRemove(ob);
   } else {

@@ -1,8 +1,11 @@
 {
   "name": "config-obfuscator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Obfuscate application configuration",
   "main": "index.js",
+  "engines": {
+    "node": ">=6"
+  },
   "bin": {
     "config-obfuscator": "bin/config-obfuscator.js"
   },
